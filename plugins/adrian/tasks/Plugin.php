@@ -1,10 +1,10 @@
-<?php namespace Adrian\Projects;
+<?php namespace Adrian\Tasks;
 
 use Backend;
 use System\Classes\PluginBase;
 
 /**
- * Projects Plugin Information File
+ * Tasks Plugin Information File
  */
 class Plugin extends PluginBase
 {
@@ -16,7 +16,7 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'Projects',
+            'name'        => 'Tasks',
             'description' => 'No description provided yet...',
             'author'      => 'Adrian',
             'icon'        => 'icon-leaf'
@@ -53,7 +53,7 @@ class Plugin extends PluginBase
         return []; // Remove this line to activate
 
         return [
-            'Adrian\Projects\Components\MyComponent' => 'myComponent',
+            'Adrian\Tasks\Components\MyComponent' => 'myComponent',
         ];
     }
 
@@ -67,8 +67,8 @@ class Plugin extends PluginBase
         return []; // Remove this line to activate
 
         return [
-            'adrian.projects.some_permission' => [
-                'tab' => 'Projects',
+            'adrian.tasks.some_permission' => [
+                'tab' => 'Tasks',
                 'label' => 'Some permission'
             ],
         ];
@@ -84,11 +84,11 @@ class Plugin extends PluginBase
         // return []; // Remove this line to activate
 
         return [
-            'projects' => [
-                'label'       => 'Projects',
-                'url'         => Backend::url('adrian/projects/project'),
+            'tasks' => [
+                'label'       => 'Tasks',
+                'url'         => Backend::url('adrian/tasks/task'),
                 'icon'        => 'icon-leaf',
-                'permissions' => ['adrian.projects.*'],
+                'permissions' => ['adrian.tasks.*'],
                 'order'       => 500,
             ],
         ];

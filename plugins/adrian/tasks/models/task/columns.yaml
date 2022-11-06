@@ -7,27 +7,29 @@ columns:
         label: ID
         searchable: true
     name:
-        label: Project name
+        label: Task name
         type: text
         searchable: true
         sortable: true
-    customer:
-        label: Customer
+    assignee:
+        label: Assignee
         type: text
         sortable: true
-    project manager:
-        label: Project manager
-        type: text
-        sortable: true
-    rate:
-        label: Rate
+    tracked time:
+        label: Tracked time
         type: number
         sortable: true
-    budget:
-        label: Budget
-        type: number
+    start date:
+        label: Start date
+        type: datetime
         sortable: true
+        format: j. F Y
+    end date:
+        label: End date
+        type: datetime
+        sortable: true
+        format: j. F Y
     created_at:
         label: Created at
         type: datetime
-        format: j. F Y
+        format: H:i:s j. F Y

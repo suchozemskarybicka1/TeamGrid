@@ -1,18 +1,18 @@
-<?php namespace Adrian\Projects\Models;
+<?php namespace Adrian\TimeEntries\Models;
 
 use Model;
 
 /**
- * Project Model
+ * TimeEntry Model
  */
-class Project extends Model
+class TimeEntry extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'adrian_projects_projects';
+    public $table = 'adrian_timeentries_time_entries';
 
     /**
      * @var array Guarded fields
@@ -61,12 +61,8 @@ class Project extends Model
      * @var array Relations
      */
     public $hasOne = [];
-
-    public $hasMany = [
-            'tasks' => ['Adrian\Tasks\Models\Task']
-    ];
+    public $hasMany = [];
     public $hasOneThrough = [];
-
     public $hasManyThrough = [];
     public $belongsTo = [];
     public $belongsToMany = [];

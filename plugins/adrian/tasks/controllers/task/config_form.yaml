@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Task
+
+# Model Form Field configuration
+form: $/adrian/tasks/models/task/fields.yaml
+
+# Model Class name
+modelClass: Adrian\Tasks\Models\Task
+
+# Default redirect location
+defaultRedirect: adrian/tasks/task
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: adrian/tasks/task/update/:id
+    redirectClose: adrian/tasks/task
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: adrian/tasks/task
+    redirectClose: adrian/tasks/task
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

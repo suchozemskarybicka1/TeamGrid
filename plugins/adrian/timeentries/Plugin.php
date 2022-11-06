@@ -1,10 +1,10 @@
-<?php namespace Adrian\Projects;
+<?php namespace Adrian\TimeEntries;
 
 use Backend;
 use System\Classes\PluginBase;
 
 /**
- * Projects Plugin Information File
+ * TimeEntries Plugin Information File
  */
 class Plugin extends PluginBase
 {
@@ -16,7 +16,7 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'Projects',
+            'name'        => 'TimeEntries',
             'description' => 'No description provided yet...',
             'author'      => 'Adrian',
             'icon'        => 'icon-leaf'
@@ -53,7 +53,7 @@ class Plugin extends PluginBase
         return []; // Remove this line to activate
 
         return [
-            'Adrian\Projects\Components\MyComponent' => 'myComponent',
+            'Adrian\TimeEntries\Components\MyComponent' => 'myComponent',
         ];
     }
 
@@ -67,8 +67,8 @@ class Plugin extends PluginBase
         return []; // Remove this line to activate
 
         return [
-            'adrian.projects.some_permission' => [
-                'tab' => 'Projects',
+            'adrian.timeentries.some_permission' => [
+                'tab' => 'TimeEntries',
                 'label' => 'Some permission'
             ],
         ];
@@ -81,14 +81,14 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-        // return []; // Remove this line to activate
+        return []; // Remove this line to activate
 
         return [
-            'projects' => [
-                'label'       => 'Projects',
-                'url'         => Backend::url('adrian/projects/project'),
+            'timeentries' => [
+                'label'       => 'TimeEntries',
+                'url'         => Backend::url('adrian/timeentries/mycontroller'),
                 'icon'        => 'icon-leaf',
-                'permissions' => ['adrian.projects.*'],
+                'permissions' => ['adrian.timeentries.*'],
                 'order'       => 500,
             ],
         ];

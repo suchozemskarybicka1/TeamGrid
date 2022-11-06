@@ -1,0 +1,4 @@
+1.0.1: First version of TimeEntries
+1.0.2:
+  - 'Create Time Entries Table'
+  - create_time_entries_table.php

@@ -1,0 +1,30 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+    name:
+        label: 'Task name'
+        type: text
+        span: full
+    assignee:
+        label: 'Assignee'
+        type: text
+        span: full
+    tracked time:
+        label: 'Tracked time'
+        type: number
+        span: full
+    start date:
+        label: 'Start date'
+        type: datepicker
+        mode: date
+        span: full
+    end date:
+        label: 'End date'
+        type: datepicker
+        mode: date
+        span: full

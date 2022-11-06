@@ -6,3 +6,23 @@ fields:
     id:
         label: ID
         disabled: true
+    name:
+        label: 'Name'
+        span: full
+        type: text
+    customer:
+        label: 'Customer'
+        span: full
+        type: text
+    project manager:
+        label: 'Project manager'
+        span: full  
+        type: text
+    rate:
+        label: 'Rate'
+        span: full
+        type: number
+    budget:
+        label: 'Budget'
+        span: full
+        type: number
