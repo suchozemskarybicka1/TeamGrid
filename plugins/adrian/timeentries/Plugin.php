@@ -81,12 +81,12 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-        return []; // Remove this line to activate
+        // return []; // Remove this line to activate
 
         return [
             'timeentries' => [
                 'label'       => 'TimeEntries',
-                'url'         => Backend::url('adrian/timeentries/mycontroller'),
+                'url'         => Backend::url('adrian/timeentries/timeentry'),
                 'icon'        => 'icon-leaf',
                 'permissions' => ['adrian.timeentries.*'],
                 'order'       => 500,
