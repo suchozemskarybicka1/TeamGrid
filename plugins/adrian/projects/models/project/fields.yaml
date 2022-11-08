@@ -14,7 +14,7 @@ fields:
         label: 'Customer'
         span: full
         type: text
-    project manager:
+    project_manager:
         label: 'Project manager'
         span: full  
         type: text

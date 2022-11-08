@@ -15,16 +15,16 @@ columns:
         label: Assignee
         type: text
         sortable: true
-    tracked time:
+    tracked_time:
         label: Tracked time
         type: number
         sortable: true
-    start date:
+    start_date:
         label: Start date
         type: datetime
         sortable: true
         format: j. F Y
-    end date:
+    end_date:
         label: End date
         type: datetime
         sortable: true

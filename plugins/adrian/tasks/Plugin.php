@@ -44,37 +44,6 @@ class Plugin extends PluginBase
     }
 
     /**
-     * Registers any front-end components implemented in this plugin.
-     *
-     * @return array
-     */
-    public function registerComponents()
-    {
-        return []; // Remove this line to activate
-
-        return [
-            'Adrian\Tasks\Components\MyComponent' => 'myComponent',
-        ];
-    }
-
-    /**
-     * Registers any back-end permissions used by this plugin.
-     *
-     * @return array
-     */
-    public function registerPermissions()
-    {
-        return []; // Remove this line to activate
-
-        return [
-            'adrian.tasks.some_permission' => [
-                'tab' => 'Tasks',
-                'label' => 'Some permission'
-            ],
-        ];
-    }
-
-    /**
      * Registers back-end navigation items for this plugin.
      *
      * @return array

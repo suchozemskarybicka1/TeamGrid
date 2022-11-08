@@ -6,11 +6,11 @@ columns:
     id:
         label: ID
         searchable: true
-    start time:
+    start_time:
         label: Start time
         type: datetime
         format: H:i:s j. F Y
-    end time:
+    end_time:
         label: End time
         type: datetime
         format: H:i:s j. F Y

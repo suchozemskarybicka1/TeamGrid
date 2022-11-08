@@ -14,16 +14,16 @@ fields:
         label: 'Assignee'
         type: text
         span: full
-    tracked time:
+    tracked_time:
         label: 'Tracked time'
         type: number
         span: full
-    start date:
+    start_date:
         label: 'Start date'
         type: datepicker
         mode: date
         span: full
-    end date:
+    end_date:
         label: 'End date'
         type: datepicker
         mode: date

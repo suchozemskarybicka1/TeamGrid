@@ -15,7 +15,7 @@ columns:
         label: Customer
         type: text
         sortable: true
-    project manager:
+    project_manager:
         label: Project manager
         type: text
         sortable: true

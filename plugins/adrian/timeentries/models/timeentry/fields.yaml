@@ -6,12 +6,12 @@ fields:
     id:
         label: ID
         disabled: true
-    start time:
+    start_time:
         label: 'Start time'
         type: datepicker
         mode: datetime
         span: full
-    end time:
+    end_time:
         label: 'End time'
         type: datepicker
         mode: datetime

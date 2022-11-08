@@ -14,7 +14,7 @@ class CreateProjectsTable extends Migration
             $table->timestamps();
             $table->string('name', 100);
             $table->string('customer', 100);
-            $table->string('project manager', 100);
+            $table->string('project_manager', 100);
             $table->integer('rate');
             $table->integer('budget');
         });
