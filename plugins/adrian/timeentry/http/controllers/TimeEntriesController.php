@@ -18,7 +18,7 @@ class TimeEntriesController extends Controller
     public function endTime()
     {
 
-        return TimeEntriesResource::collection(TimeEntry::select('end_time')->get())
+        return TimeEntriesResource::collection(TimeEntry::select('end_time')->get());
 
     }
 

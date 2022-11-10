@@ -27,6 +27,10 @@ columns:
         label: Budget
         type: number
         sortable: true
+    complete:
+        label: Complete
+        type: number
+        sortable: true
     created_at:
         label: Created at
         type: datetime

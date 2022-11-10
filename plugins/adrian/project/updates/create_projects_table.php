@@ -17,6 +17,7 @@ class CreateProjectsTable extends Migration
             $table->string('project_manager', 100);
             $table->integer('rate');
             $table->integer('budget');
+            $table->boolean('complete');
         });
     }
 

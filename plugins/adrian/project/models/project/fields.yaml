@@ -22,6 +22,10 @@ fields:
         label: 'Rate'
         span: full
         type: number
+    complete:
+        label: 'Complete'
+        span: auto
+        type: checkbox
     budget:
         label: 'Budget'
         span: full
