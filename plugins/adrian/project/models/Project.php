@@ -8,6 +8,7 @@ use Model;
 class Project extends Model
 {
     use \October\Rain\Database\Traits\Validation;
+    use \October\Rain\Database\Traits\Sluggable;
 
     /**
      * @var string The database table used by the model.
@@ -75,4 +76,12 @@ class Project extends Model
     public $morphMany = [];
     public $attachOne = [];
     public $attachMany = [];
+
+    public function scopeIsComplete($query)
+    {
+        return $query->where('is_complete', true);
+    }
+
+    protected $slugs = ['slug' => 'name'];
+
 }

@@ -22,7 +22,7 @@ fields:
         label: 'Rate'
         span: full
         type: number
-    complete:
+    is_complete:
         label: 'Complete'
         span: auto
         type: checkbox

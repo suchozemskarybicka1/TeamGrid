@@ -14,6 +14,7 @@ class ProjectsResource extends JsonResource {
             "project_manager" => $this->project_manager,
             "rate" => $this->rate,
             "budget" => $this->budget,
+            "is_complete" => $this->is_complete,
             "created_at" => date($this->created_at)
         ];
     }
