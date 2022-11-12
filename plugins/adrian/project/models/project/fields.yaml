@@ -22,8 +22,8 @@ fields:
         label: 'Rate'
         span: full
         type: number
-    is_complete:
-        label: 'Complete'
+    is_completed:
+        label: 'Completed'
         span: auto
         type: checkbox
     budget:

@@ -7,19 +7,28 @@ use Illuminate\Routing\Controller;
 
 class TimeEntriesController extends Controller
 {
-
+    
     public function startTime()
     {
+        
+        $timeEntry = new TimeEntry;
+        $timeEntry->task_id = post('task_id');
+        $timeEntry->start_time = now();
+        $timeEntry->save();
 
-        return TimeEntriesResource::collection(TimeEntry::select('start_time')->get());
-
+        return TimeEntriesResource::make($timeEntry);
     }
-
-    public function endTime()
+    
+    
+    
+    public function endTime($id)
     {
+        $timeEntry = TimeEntry::find($id);
 
-        return TimeEntriesResource::collection(TimeEntry::select('end_time')->get());
+        $timeEntry->end_time = now();
+        $timeEntry->save();
 
+        return TimeEntriesResource::make($timeEntry);
     }
 
 }

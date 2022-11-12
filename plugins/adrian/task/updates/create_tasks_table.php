@@ -19,6 +19,7 @@ class CreateTasksTable extends Migration
             $table->integer('tracked_time');
             $table->date('start_date');
             $table->date('end_date');
+            $table->boolean('is_completed')->default(false);
         });
     }
 

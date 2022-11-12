@@ -77,9 +77,9 @@ class Project extends Model
     public $attachOne = [];
     public $attachMany = [];
 
-    public function scopeIsComplete($query)
+    public function scopeIsCompleted($query)
     {
-        return $query->where('is_complete', true);
+        return $query->where('is_completed', true);
     }
 
     protected $slugs = ['slug' => 'name'];

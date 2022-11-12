@@ -2,5 +2,9 @@
 
 use Adrian\TimeEntry\Http\Controllers\TimeEntriesController;
 
-Route::get('start-time', [TimeEntriesController::class, 'startTime']);
-Route::get('end-time', [TimeEntriesController::class, 'endTime']);
+Route::group(['prefix' => 'api/v1'], function() {
+    Route::group(['prefix' => '/time-entries'], function() {
+        Route::post('/start', [TimeEntriesController::class, 'startTime']);
+        Route::post('/end/{id}', [TimeEntriesController::class, 'endTime']);
+    }); 
+}); 

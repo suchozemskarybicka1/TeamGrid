@@ -27,8 +27,8 @@ columns:
         label: Budget
         type: number
         sortable: true
-    is_complete:
-        label: Complete
+    is_completed:
+        label: Completed
         type: switch
         sortable: true
     created_at:
