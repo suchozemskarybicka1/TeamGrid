@@ -31,4 +31,9 @@ class Task extends Model
         'timeentries' => ['Adrian\TimeEntry\Models\TimeEntry']
     ];
 
+
+    public $belongsTo = [
+        'project' => ['Adrian\Project\Models\Project']
+    ];
+
 }

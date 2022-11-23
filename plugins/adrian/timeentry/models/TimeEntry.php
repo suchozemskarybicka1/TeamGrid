@@ -19,6 +19,7 @@ class TimeEntry extends Model
      */
     protected $guarded = ['*'];
 
+    public $rules = [];
 
     /**
      * @var array Attributes to be cast to Argon (Carbon) instances
@@ -26,6 +27,10 @@ class TimeEntry extends Model
     protected $dates = [
         'created_at',
         'updated_at'
+    ];
+
+    public $belongsTo = [
+        'task' => ['Adrian\Project\Models\Project']
     ];
 
 }

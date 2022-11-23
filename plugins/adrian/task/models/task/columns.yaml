@@ -15,8 +15,8 @@ columns:
         label: Assignee
         type: text
         sortable: true
-    tracked_time:
-        label: Tracked time
+    total_time:
+        label: Total time
         type: number
         sortable: true
     start_date:

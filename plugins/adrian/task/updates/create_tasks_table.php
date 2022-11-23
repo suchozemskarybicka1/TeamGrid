@@ -16,7 +16,7 @@ class CreateTasksTable extends Migration
             $table->foreign('project_id', 'project_foreign')->references('id')->on('adrian_projects_projects');
             $table->string('name', 100);
             $table->string('assignee', 100);
-            $table->integer('tracked_time');
+            $table->time('total_time');
             $table->date('start_date');
             $table->date('end_date');
             $table->boolean('is_completed')->default(false);

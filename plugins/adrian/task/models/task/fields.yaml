@@ -14,8 +14,8 @@ fields:
         label: 'Assignee'
         type: text
         span: full
-    tracked_time:
-        label: 'Tracked time'
+    total_time:
+        label: 'Total time'
         type: number
         span: full
     start_date:
