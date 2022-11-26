@@ -33,4 +33,16 @@ class TimeEntry extends Model
         'task' => ['Adrian\Project\Models\Project']
     ];
 
+
+    public function beforeSave() {
+
+        if ($this->end_time != null) {
+
+            $total_time = now()->diffInMinutes($this->start_time); 
+            
+            $this->total_time = $total_time;
+
+        }
+    }
+
 }

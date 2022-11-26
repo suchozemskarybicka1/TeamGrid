@@ -35,5 +35,11 @@ class Task extends Model
     public $belongsTo = [
         'project' => ['Adrian\Project\Models\Project']
     ];
+    
+
+    public function getAttribute()
+    {
+        return $this->timeentries()->sum('total_time');        
+    }
 
 }

@@ -30,6 +30,7 @@ class TimeEntriesController extends Controller
         $timeEntry->end_time = now();
         $timeEntry->save();
         
+        /*
         $task = Task::find($timeEntry->task_id);
         $tracked_time = $task->tracked_time;
 
@@ -39,7 +40,7 @@ class TimeEntriesController extends Controller
         $task->$tracked_time += $new_time;
         
         $task->save();
-
+        */
         return TimeEntriesResource::make($timeEntry);
     }
 
