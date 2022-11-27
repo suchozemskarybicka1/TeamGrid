@@ -13,7 +13,7 @@ class Task extends Model
      * @var string The database table used by the model.
      */
     public $table = 'adrian_task_tasks';
-
+    public $rules = [];
     /**
      * @var array Guarded fields
      */
@@ -37,7 +37,7 @@ class Task extends Model
     ];
     
 
-    public function getAttribute()
+    public function getTrackedTimeAttribute()
     {
         return $this->timeentries()->sum('total_time');        
     }

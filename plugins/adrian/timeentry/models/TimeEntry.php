@@ -13,13 +13,13 @@ class TimeEntry extends Model
      * @var string The database table used by the model.
      */
     public $table = 'adrian_timeentry_time_entries';
+    public $rules = [];
 
     /**
      * @var array Guarded fields
      */
     protected $guarded = ['*'];
 
-    public $rules = [];
 
     /**
      * @var array Attributes to be cast to Argon (Carbon) instances

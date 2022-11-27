@@ -16,3 +16,7 @@ fields:
         type: datepicker
         mode: datetime
         span: full
+    task_id:
+        label: 'Task id'
+        type: number
+        span: full

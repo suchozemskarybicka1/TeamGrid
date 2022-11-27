@@ -33,3 +33,7 @@ columns:
         label: Created at
         type: datetime
         format: H:i:s j. F Y
+    tracked_time:
+        label: Tracked time
+        type: number
+        sortable: true
