@@ -16,6 +16,7 @@ class CreateTimeEntriesTable extends Migration
             $table->foreign('task_id', 'task_foreign')->references('id')->on('adrian_tasks_tasks');
             $table->dateTime('start_time');
             $table->dateTime('end_time');
+            $table->integer('total_time');
         });
     }
 

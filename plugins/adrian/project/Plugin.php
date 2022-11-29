@@ -41,7 +41,7 @@ class Plugin extends PluginBase
     public function boot()
     {
             User::extend($model){
-                $model->hasMany['project'] = ['Adrian\Project\Models\Project']
+                $model->hasMany['projects'] = ['Adrian\Project\Models\Project']
             }
     }
 
