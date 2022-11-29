@@ -40,7 +40,9 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-
+        User::extend($model){
+            $model->hasMany['task'] = ['Adrian\Task\Models\Task']
+        }
     }
 
     /**
