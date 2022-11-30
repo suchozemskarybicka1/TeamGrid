@@ -34,8 +34,8 @@ class Plugin extends PluginBase
     }
 
     /**
-     * Boot method, called right before the request route.
      *
+     * Boot method, called right before the request route.
      * @return array
      */
     public function boot()

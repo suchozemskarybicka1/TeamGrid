@@ -33,6 +33,7 @@ class Task extends Model
 
 
     public $belongsTo = [
+        'user' => ['RainLab\User\Models\User'],
         'project' => ['Adrian\Project\Models\Project']
     ];
     
