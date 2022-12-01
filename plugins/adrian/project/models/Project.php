@@ -32,6 +32,15 @@ class Project extends Model
         'tasks' => ['Adrian\Task\Models\Task']
     ];
     
+    public $belongsTo = [
+        'project_manager' => ['Rainlab\User\Models\User'], 
+        'customer' => ['Rainlab\User\Models\User'],
+    ];
+    
+    public $belongsToMany = [
+        'accounting_people' => ['Rainlab\User\Models\User', 'table' => 'adrian_project_user'],
+    ];
+
     public function scopeIsCompleted($query)
     {
         return $query->where('is_completed', true);
