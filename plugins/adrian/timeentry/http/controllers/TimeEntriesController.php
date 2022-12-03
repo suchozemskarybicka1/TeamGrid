@@ -2,10 +2,9 @@
 namespace Adrian\TimeEntry\Http\Controllers;
 
 use Adrian\TimeEntry\Models\TimeEntry;
-use Adrian\Task\Models\Task;
 use Adrian\TimeEntry\Http\Resources\TimeEntriesResource;
 use Illuminate\Routing\Controller;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class TimeEntriesController extends Controller
 {
@@ -14,6 +13,9 @@ class TimeEntriesController extends Controller
     {
         
         $timeEntry = new TimeEntry;
+        
+        $timeEntry->user_id = Auth::user()->id;
+
         $timeEntry->task_id = post('task_id');
         $timeEntry->start_time = now();
         $timeEntry->save();
@@ -24,7 +26,9 @@ class TimeEntriesController extends Controller
     
     public function endTime($id)
     {
-        $timeEntry = TimeEntry::find($id);
+        $timeEntry = TimeEntry::find($id)
+            ->where('user_id', Auth::user()->id)
+            ->firstOrFail();
         $timeEntry->end_time = now();
         $timeEntry->save();
   

@@ -4,7 +4,7 @@ namespace Adrian\Task\Http\Controllers;
 use Adrian\Task\Models\Task;
 use Adrian\Task\Http\Resources\TasksResource;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class TasksController extends Controller
 {
@@ -25,6 +25,7 @@ class TasksController extends Controller
         $task->name = post('name');
         $task->assignee = post('assignee');
         $task->project_id = post('project_id');
+        $task->user_id = Auth::user()->id;
         $task->start_date = post('start_date');
         $task->end_date = post('end_date');
         $task->save();
@@ -36,7 +37,9 @@ class TasksController extends Controller
     
     public function edit($id)
     {
-        $task = Task::where('id', $id)->firstOrFail();
+        $task = Task::where('id', $id)
+            ->where('user_id', Auth::user()->id)
+            ->firstOrFail();
 
         $task->name = post('name') ?: $task->name;
         $task->assignee = post('assignee') ?: $task->assignee;
@@ -50,7 +53,9 @@ class TasksController extends Controller
 
     public function setCompleted($id)
     {
-        $task = Task::where('id', $id)->firstOrFail();
+        $task = Task::where('id', $id)
+            ->where('user_id', Auth::user()->id)
+            ->firstOrFail();
         
         $task->is_completed = true;
 
