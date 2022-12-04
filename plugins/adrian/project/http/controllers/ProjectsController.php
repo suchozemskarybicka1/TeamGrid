@@ -24,7 +24,7 @@ class ProjectsController extends Controller
         $project = new Project;
         $project->name = post('name');
         $project->customer = post('customer');
-        $project->project_manager = post('project_manager');
+        $project->project_manager_id = Auth::user()->id;
         $project->rate = post('rate');
         $project->budget = post('budget');
         $project->is_completed = false;
@@ -42,7 +42,10 @@ class ProjectsController extends Controller
     
     public function edit($key)
     {
-        $project = Project::where('id', $key)->orWhere('slug', $key)->firstOrFail();
+        $project = Project::where('id', $key)
+            ->orWhere('slug', $key)
+            ->where('user_id', Auth::user()->id)
+            ->firstOrFail();
 
         $project->name = post('name') ?: $project->name;
         $project->customer = post('customer') ?: $project->customer;
@@ -57,7 +60,10 @@ class ProjectsController extends Controller
 
     public function setCompleted($key)
     {
-        $project = Project::where('id', $key)->orWhere('slug', $key)->firstOrFail();
+        $project = Project::where('id', $key)
+            ->orWhere('slug', $key)
+            ->where('user_id', Auth::user()->id)
+            ->firstOrFail();
         
         $project->is_completed = true;
 
