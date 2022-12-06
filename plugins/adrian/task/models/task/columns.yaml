@@ -37,3 +37,11 @@ columns:
         label: Tracked time
         type: number
         sortable: true
+    user:
+        label: User
+        type: text
+        relation: user
+    project:
+        label: Project
+        type: text
+        relation: project

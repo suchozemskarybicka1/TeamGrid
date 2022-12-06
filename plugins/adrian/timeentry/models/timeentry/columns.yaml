@@ -17,3 +17,11 @@ columns:
     tracked_time:
         label: Tracked time
         type: number
+    user:
+        label: User
+        type: text
+        relation: user
+    task:
+        label: Task
+        type: text
+        relation: task

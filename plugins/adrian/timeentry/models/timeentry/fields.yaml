@@ -20,3 +20,26 @@ fields:
         label: 'Task id'
         type: number
         span: full
+    user:
+        label: User
+        type: recordfinder
+        list: ~/plugins/rainlab/user/models/user/columns.yaml
+        recordsPerPage: 10
+        title: Find user
+        prompt: Click the Find button to find a user
+        keyFrom: id
+        nameFrom: name
+        descriptionFrom: email
+        useRelation: true
+        modelClass: RainLab\User\Models\User
+    task:
+        label: Task
+        type: recordfinder
+        list: ~/plugins/adrian/task/models/task/columns.yaml
+        recordsPerPage: 10
+        title: Find task name
+        prompt: Click the Find button to find a task name
+        keyFrom: id
+        nameFrom: name
+        useRelation: true
+        modelClass: Adrian\Task\Models\Task

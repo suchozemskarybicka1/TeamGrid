@@ -14,10 +14,12 @@ columns:
     customer:
         label: Customer
         type: text
+        relation: customer
         sortable: true
     project_manager:
         label: Project manager
         type: text
+        relation: project_manager
         sortable: true
     rate:
         label: Rate

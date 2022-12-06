@@ -14,7 +14,8 @@ class Project extends Model
      * @var string The database table used by the model.
      */
     public $table = 'adrian_project_projects';
-
+    public $rules = [];
+    
     /**
      * @var array Guarded fields
      */

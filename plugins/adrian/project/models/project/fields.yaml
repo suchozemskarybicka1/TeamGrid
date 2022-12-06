@@ -10,14 +10,6 @@ fields:
         label: 'Name'
         span: full
         type: text
-    customer:
-        label: 'Customer'
-        span: full
-        type: text
-    project_manager:
-        label: 'Project manager'
-        span: full  
-        type: text
     rate:
         label: 'Rate'
         span: full
@@ -30,3 +22,27 @@ fields:
         label: 'Budget'
         span: full
         type: number
+    customer:
+        label: Customer
+        type: recordfinder
+        list: ~/plugins/rainlab/user/models/user/columns.yaml
+        recordsPerPage: 10
+        title: Find customer
+        prompt: Click the Find button to find a customer
+        keyFrom: id
+        nameFrom: name
+        descriptionFrom: email
+        useRelation: true
+        modelClass: RainLab\User\Models\User
+    project_manager:
+        label: Project manager
+        type: recordfinder
+        list: ~/plugins/rainlab/user/models/user/columns.yaml
+        recordsPerPage: 10
+        title: Find project manager
+        prompt: Click the Find button to find a project manager
+        keyFrom: id
+        nameFrom: name
+        descriptionFrom: email
+        useRelation: true
+        modelClass: RainLab\User\Models\User

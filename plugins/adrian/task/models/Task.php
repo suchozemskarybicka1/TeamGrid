@@ -42,5 +42,4 @@ class Task extends Model
     {
         return $this->timeentries()->sum('total_time');        
     }
-
 }
