@@ -1,6 +1,6 @@
 <?php
 
-namespace Adrian\Task\Classes\Extend;
+namespace Adrian\Project\Classes\Extend;
 
 use RainLab\User\Models\User;
 use Event;
@@ -11,7 +11,7 @@ class UserExtend {
         
         User::extend(function($model) {
             
-            $model->hasMany['tasks'] = ['Adrian\Task\Models\Task'];
+            $model->hasMany['projects'] = ['Adrian\Project\Models\Project'];
 
         });
     }
@@ -29,11 +29,11 @@ class UserExtend {
                 return;
             }
         
-            // Add an extra tasks column
+            // Add an extra projects column
             $listWidget->addColumns([
-                'tasks' => [
-                    'label' => 'Tasks',
-                    'relation' => 'tasks',
+                'projects' => [
+                    'label' => 'Projects',
+                    'relation' => 'projects',
                     'type' => 'text'
                 ]
             ]);
@@ -53,15 +53,14 @@ class UserExtend {
                 return;
             }
         
-            // Add an extra tasks field
+            // Add an extra projects field
             $widget->addFields([
-                'tasks' => [
-                    'label'   => 'Tasks',
-                    'comment' => 'Select the users tasks',
+                'projects' => [
+                    'label'   => 'Projects',
+                    'comment' => 'Select the users projects',
                     'type'    => 'checkboxlist'
                 ]
             ]);
         });
     }
-
 }
