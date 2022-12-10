@@ -3,9 +3,6 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
-        disabled: true
     name:
         label: 'Name'
         span: full
@@ -17,7 +14,7 @@ fields:
     is_completed:
         label: 'Completed'
         span: auto
-        type: checkbox
+        type: switch
     budget:
         label: 'Budget'
         span: full

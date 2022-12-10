@@ -2,6 +2,7 @@
 
 use Backend;
 use System\Classes\PluginBase;
+use Adrian\Project\Classes\Extend\UserExtend;
 
 /**
  * Task Plugin Information File
@@ -40,7 +41,7 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-
+        UserExtend::extendUser_AddRelations();
     }
 
     /**

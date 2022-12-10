@@ -13,12 +13,11 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('name', 100);
-            $table->string('customer', 100);
+            $table->string('customer_id');
             $table->integer('rate');
             $table->integer('budget');
             $table->boolean('is_completed')->default(false);
-            $table->integer('project_manager_id')->unsigned();
-            $table->foreign('project_manager_id', 'project_manager_id_foreign')->references('id')->on('users');
+            $table->integer('project_manager_id');
         });
     }
 

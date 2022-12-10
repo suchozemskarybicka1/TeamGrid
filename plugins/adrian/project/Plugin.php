@@ -2,6 +2,7 @@
 
 use Backend;
 use System\Classes\PluginBase;
+use Adrian\Project\Classes\Extend\UserExtend;
 
 /**
  * Project Plugin Information File
@@ -40,9 +41,9 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-            User::extend($model){
-                $model->hasMany['projects'] = ['Adrian\Project\Models\Project']
-            }
+            UserExtend::extendUser_AddRelations();
+            UserExtend::extendUser_AddColumns();
+            UserExtend::extendUser_AddScopes();
     }
 
     /**

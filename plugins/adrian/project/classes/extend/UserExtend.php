@@ -3,6 +3,8 @@
 namespace Adrian\Project\Classes\Extend;
 
 use RainLab\User\Models\User;
+use Adrian\Project\Models\Project;
+use Adrian\Project\Http\Resources\ProjectsResource;
 use Event;
 
 class UserExtend {
@@ -34,33 +36,36 @@ class UserExtend {
                 'projects' => [
                     'label' => 'Projects',
                     'relation' => 'projects',
-                    'type' => 'text'
+                    'select' => 'name'
                 ]
             ]);
         });
     }
 
-    public static function extendUser_AddFields() {
+    public static function extendUser_AddScopes() {
 
-        Event::listen('backend.form.extendFields', function ($widget) {
-            // Only for the User controller
-            if (!$widget->getController() instanceof \RainLab\User\Controllers\Users) {
-                return;
-            }
-        
-            // Only for the User model
-            if (!$widget->model instanceof \RainLab\User\Models\User) {
-                return;
-            }
-        
-            // Add an extra projects field
-            $widget->addFields([
-                'projects' => [
-                    'label'   => 'Projects',
-                    'comment' => 'Select the users projects',
-                    'type'    => 'checkboxlist'
-                ]
-            ]);
+        User::extend(function($model) {
+            
+            $model->addDynamicMethod('scopeHasCustomerGroup', function($query)  { //use ($model)
+
+                return $query->whereHas('groups', function ($query) {
+                    $query->where('name', 'Customers');   
+                });
+            
+            });
+        });
+
+        User::extend(function($model) {
+            
+            $model->addDynamicMethod('scopeHasProjectManagerGroup', function($query)  { //use ($model)
+
+                return $query->whereHas('groups', function ($query) {
+                    $query->where('name', 'Project managers');   
+                });
+            
+            });
         });
     }
+
+
 }

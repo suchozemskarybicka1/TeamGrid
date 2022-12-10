@@ -11,10 +11,6 @@ columns:
         type: text
         searchable: true
         sortable: true
-    assignee:
-        label: Assignee
-        type: text
-        sortable: true
     total_time:
         label: Total time
         type: number
@@ -37,11 +33,11 @@ columns:
         label: Tracked time
         type: number
         sortable: true
-    user:
+    user_id:
         label: User
         type: text
         relation: user
-    project:
+    project_id:
         label: Project
         type: text
         relation: project

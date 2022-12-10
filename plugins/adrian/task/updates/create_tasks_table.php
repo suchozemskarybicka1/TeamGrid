@@ -17,7 +17,6 @@ class CreateTasksTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id', 'user_foreign')->references('id')->on('users');
             $table->string('name', 100);
-            $table->string('assignee', 100);
             $table->time('total_time');
             $table->date('start_date');
             $table->date('end_date');

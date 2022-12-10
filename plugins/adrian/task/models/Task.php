@@ -28,7 +28,7 @@ class Task extends Model
     ];
 
     public $hasMany = [
-        'timeentries' => ['Adrian\TimeEntry\Models\TimeEntry']
+        'time_entries' => ['Adrian\TimeEntry\Models\TimeEntry']
     ];
 
 
@@ -40,6 +40,6 @@ class Task extends Model
 
     public function getTrackedTimeAttribute()
     {
-        return $this->timeentries()->sum('total_time');        
+        return $this->time_entries()->sum('total_time');        
     }
 }

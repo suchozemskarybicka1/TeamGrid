@@ -17,11 +17,11 @@ columns:
     tracked_time:
         label: Tracked time
         type: number
-    user:
+    user_id:
         label: User
         type: text
         relation: user
-    task:
+    task_id:
         label: Task
         type: text
         relation: task

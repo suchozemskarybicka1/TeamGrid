@@ -31,7 +31,7 @@ class TimeEntry extends Model
 
     public $belongsTo = [
         'user' => ['RainLab\User\Models\User'],
-        'task' => ['Adrian\Project\Models\Project']
+        'task' => ['Adrian\Task\Models\Task']
     ];
 
 
