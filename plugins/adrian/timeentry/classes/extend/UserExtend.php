@@ -20,12 +20,12 @@ class UserExtend {
         
         Event::listen('backend.list.extendColumns', function ($listWidget) {
             // Only for the User controller
-            if (!$listWidget->getController() instanceof \Backend\Controllers\Users) {
+            if (!$listWidget->getController() instanceof \RainLab\User\Controllers\Users) {
                 return;
             }
         
             // Only for the User model
-            if (!$listWidget->model instanceof \Backend\Models\User) {
+            if (!$listWidget->model instanceof \RainLab\User\Models\User) {
                 return;
             }
         

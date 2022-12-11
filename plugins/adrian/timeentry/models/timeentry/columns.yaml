@@ -14,14 +14,16 @@ columns:
         label: End time
         type: datetime
         format: H:i:s j. F Y
-    tracked_time:
-        label: Tracked time
+    total_time:
+        label: Total time
         type: number
-    user_id:
+    user:
         label: User
         type: text
         relation: user
+        select: name
     task_id:
         label: Task
         type: text
         relation: task
+        select: name

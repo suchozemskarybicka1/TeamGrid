@@ -13,6 +13,8 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('name', 100);
+            $table->string('name', 100);
+            $table->string('slug')->index();
             $table->string('customer_id');
             $table->integer('rate');
             $table->integer('budget');

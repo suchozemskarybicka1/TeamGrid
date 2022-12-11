@@ -11,7 +11,7 @@ class TasksResource extends JsonResource {
             "id" => $this->id,
             "name" => $this->name,
             "assignee" => $this->assignee,
-            "tracked_time" => $this->tracked_time,
+            "total_time" => $this->total_time,
             "start_date" => $this->start_date,
             "end_date" => $this->end_date,
             "created_at" => date($this->created_at)
