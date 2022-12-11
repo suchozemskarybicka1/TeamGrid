@@ -22,7 +22,7 @@ columns:
         type: text
         relation: user
         select: name
-    task_id:
+    task:
         label: Task
         type: text
         relation: task
