@@ -33,13 +33,7 @@ columns:
         label: Total time
         type: number
         sortable: true
-    user:
+    user[name]:
         label: User
-        type: text
-        relation: user
-        select: name
-    project_id:
+    project[name]:
         label: Project
-        type: text
-        relation: project
-        select: name

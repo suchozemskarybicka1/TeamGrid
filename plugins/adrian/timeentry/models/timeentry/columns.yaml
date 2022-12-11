@@ -17,13 +17,7 @@ columns:
     total_time:
         label: Total time
         type: number
-    user:
+    user[name]:
         label: User
-        type: text
-        relation: user
-        select: name
-    task:
+    task[name]:
         label: Task
-        type: text
-        relation: task
-        select: name

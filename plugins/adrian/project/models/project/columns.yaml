@@ -11,18 +11,10 @@ columns:
         type: text
         searchable: true
         sortable: true
-    customer:
+    customer[name]:
         label: Customer
-        type: text
-        relation: customer
-        sortable: true
-        select: name
-    project_manager:
+    project_manager[name]:
         label: Project manager
-        type: text
-        relation: project_manager
-        sortable: true
-        select: name
     rate:
         label: Rate
         type: number
