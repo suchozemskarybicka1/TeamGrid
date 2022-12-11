@@ -18,7 +18,7 @@ class CreateProjectsTable extends Migration
             $table->integer('rate');
             $table->integer('budget');
             $table->boolean('is_completed')->default(false);
-            $table->integer('user_id');
+            $table->integer('project_manager_id');
         });
     }
 

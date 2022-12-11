@@ -11,7 +11,7 @@ class ProjectsResource extends JsonResource {
             "id" => $this->id,
             "customer" => $this->customer,
             "name" => $this->name,
-            "project_manager" => $this->project_manager,
+            "project_manager" => $this->project_manager_id,
             "rate" => $this->rate,
             "budget" => $this->budget,
             "is_completed" => $this->is_completed,
