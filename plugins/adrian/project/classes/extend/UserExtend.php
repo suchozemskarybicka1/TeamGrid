@@ -3,6 +3,7 @@
 namespace Adrian\Project\Classes\Extend;
 
 use RainLab\User\Models\User;
+use \RainLab\User\Controllers\Users;
 use Adrian\Project\Models\Project;
 use Adrian\Project\Http\Resources\ProjectsResource;
 use Event;
@@ -18,29 +19,32 @@ class UserExtend {
         });
     }
 
-    public static function extendUser_AddColumns() {
-        
-        Event::listen('backend.list.extendColumns', function ($listWidget) {
+    public static function extendUser_AddFields() {
+
+        Event::listen('backend.form.extendFields', function ($widget) {
             // Only for the User controller
-            if (!$listWidget->getController() instanceof \RainLab\User\Controllers\Users) {
+            if (!$widget->getController() instanceof Users) {
                 return;
             }
-        
+
             // Only for the User model
-            if (!$listWidget->model instanceof \RainLab\User\Models\User) {
+            if (!$widget->model instanceof User) {
                 return;
             }
-        
-            // Add an extra projects column
-            $listWidget->addColumns([
+
+            var_dump(Project::getProjectsOptions());
+            // Add an extra projects field
+            $widget->addFields([
                 'projects' => [
-                    'label' => 'Projects',
-                    'relation' => 'projects',
-                    'select' => 'name'
+                    'label'   => 'Projects',
+                    'comment' => 'Select the users projects',
+                    'type'    => 'checkboxlist',
+                    'options' => Project::getProjectsOptions()
                 ]
             ]);
         });
     }
+
 
     public static function extendUser_AddScopes() {
 
@@ -66,6 +70,4 @@ class UserExtend {
             });
         });
     }
-
-
 }

@@ -42,7 +42,7 @@ class Plugin extends PluginBase
     public function boot()
     {
             UserExtend::extendUser_AddRelations();
-            UserExtend::extendUser_AddColumns();
+            UserExtend::extendUser_AddFields();
             UserExtend::extendUser_AddScopes();
     }
 

@@ -1,6 +1,7 @@
 <?php namespace Adrian\Project\Models;
 
 use Model;
+use Adrian\Project\Http\Resources\ProjectsResource;
 
 /**
  * Project Model
@@ -49,4 +50,10 @@ class Project extends Model
 
     protected $slugs = ['slug' => 'name'];
 
+
+    public static function getProjectsOptions()
+    {
+        $projects = Project::all();
+        return $projects;
+    }
 }
