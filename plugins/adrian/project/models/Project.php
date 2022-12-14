@@ -8,7 +8,6 @@ use Adrian\Project\Http\Resources\ProjectsResource;
  */
 class Project extends Model
 {
-    use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\Sluggable;
 
     /**
@@ -50,10 +49,4 @@ class Project extends Model
 
     protected $slugs = ['slug' => 'name'];
 
-
-    public static function getProjectsOptions()
-    {
-        $projects = Project::all();
-        return $projects;
-    }
 }

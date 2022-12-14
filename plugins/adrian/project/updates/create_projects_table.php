@@ -14,7 +14,7 @@ class CreateProjectsTable extends Migration
             $table->timestamps();
             $table->string('name', 100);
             $table->string('slug')->index();
-            $table->string('customer_id');
+            $table->integer('customer_id');
             $table->integer('rate');
             $table->integer('budget');
             $table->boolean('is_completed')->default(false);

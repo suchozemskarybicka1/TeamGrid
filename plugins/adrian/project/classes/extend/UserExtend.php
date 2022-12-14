@@ -4,8 +4,6 @@ namespace Adrian\Project\Classes\Extend;
 
 use RainLab\User\Models\User;
 use \RainLab\User\Controllers\Users;
-use Adrian\Project\Models\Project;
-use Adrian\Project\Http\Resources\ProjectsResource;
 use Event;
 
 class UserExtend {
@@ -15,6 +13,8 @@ class UserExtend {
         User::extend(function($model) {
             
             $model->hasMany['projects'] = ['Adrian\Project\Models\Project'];
+            $model->hasMany['tasks'] = ['Adrian\Task\Models\Task'];
+            $model->hasMany['time_entries'] = ['Adrian\TimeEntry\Models\TimeEntry'];
 
         });
     }
@@ -32,14 +32,22 @@ class UserExtend {
                 return;
             }
 
-            var_dump(Project::getProjectsOptions());
             // Add an extra projects field
             $widget->addFields([
                 'projects' => [
                     'label'   => 'Projects',
                     'comment' => 'Select the users projects',
                     'type'    => 'checkboxlist',
-                    'options' => Project::getProjectsOptions()
+                ],
+                'tasks' => [
+                    'label'   => 'Tasks',
+                    'comment' => 'Select the users tasks',
+                    'type'    => 'checkboxlist'
+                ],
+                'time entries' => [
+                    'label'   => 'time entries',
+                    'comment' => 'Select the users time entries',
+                    'type'    => 'checkboxlist'
                 ]
             ]);
         });
