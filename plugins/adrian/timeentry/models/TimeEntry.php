@@ -1,19 +1,18 @@
 <?php namespace Adrian\TimeEntry\Models;
 
 use Model;
+use Carbon\Carbon;
 
 /**
  * TimeEntry Model
  */
 class TimeEntry extends Model
 {
-    use \October\Rain\Database\Traits\Validation;
 
     /**
      * @var string The database table used by the model.
      */
     public $table = 'adrian_timeentry_time_entries';
-    public $rules = [];
 
     /**
      * @var array Guarded fields
@@ -36,14 +35,17 @@ class TimeEntry extends Model
 
 
     public function beforeSave() {
-
+     
         if ($this->end_time != null) {
 
-            $total_time = now()->diffInMinutes($this->start_time); 
+            $start_time = Carbon::parse($this->start_time);
+            $end_time = Carbon::parse($this->end_time);
+            $total_time = $end_time->diffInMinutes($start_time);
             
             $this->total_time = $total_time;
 
         }
+
     }
 
 }

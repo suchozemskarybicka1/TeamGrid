@@ -12,7 +12,6 @@ class Task extends Model
      * @var string The database table used by the model.
      */
     public $table = 'adrian_task_tasks';
-    public $rules = [];
     /**
      * @var array Guarded fields
      */

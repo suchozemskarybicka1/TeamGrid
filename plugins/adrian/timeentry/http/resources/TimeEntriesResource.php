@@ -12,6 +12,7 @@ class TimeEntriesResource extends JsonResource {
             "task_id" => $this->task_id,
             "start_date" => $this->start_date,
             "end_date" => $this->end_date,
+            "total_time" => $this->total_time,
             "created_at" => date($this->created_at)
         ];
     }

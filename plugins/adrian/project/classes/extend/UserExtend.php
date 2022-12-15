@@ -34,20 +34,16 @@ class UserExtend {
 
             // Add an extra projects field
             $widget->addFields([
-                'projects' => [
-                    'label'   => 'Projects',
-                    'comment' => 'Select the users projects',
-                    'type'    => 'checkboxlist',
-                ],
                 'tasks' => [
                     'label'   => 'Tasks',
                     'comment' => 'Select the users tasks',
-                    'type'    => 'checkboxlist'
+                    'type'    => 'relation'
                 ],
-                'time entries' => [
-                    'label'   => 'time entries',
+                'time_entries' => [
+                    'label'   => 'Time entries',
                     'comment' => 'Select the users time entries',
-                    'type'    => 'checkboxlist'
+                    'nameFrom'=> 'id',
+                    'type'    => 'relation'
                 ]
             ]);
         });

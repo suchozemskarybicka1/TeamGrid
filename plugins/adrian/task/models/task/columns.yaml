@@ -11,10 +11,6 @@ columns:
         type: text
         searchable: true
         sortable: true
-    total_time:
-        label: Total time
-        type: number
-        sortable: true
     start_date:
         label: Start date
         type: datetime

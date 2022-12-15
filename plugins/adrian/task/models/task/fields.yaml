@@ -22,9 +22,9 @@ fields:
         mode: date
         span: full
     time_entries:
-        label: Time entries
+        label: 'Time entries'
         type: relation
-        nameFrom: task_id
+        nameFrom: id
     user:
         label: User
         type: recordfinder
